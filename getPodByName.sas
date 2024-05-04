@@ -37,8 +37,8 @@ CACERT=${SERVICEACCOUNT}/ca.crt
 # (da fare come secondo giro)  
 PODNAME=&parms
 
-# delete pod 
-curl --cacert ${CACERT} --header "Authorization: Bearer ${TOKEN}" -X DELETE https://kubernetes.default.svc/api/v1/namespaces/$NAMESPACE/pods/$PODNAME --silent
+# get pod 
+curl --cacert ${CACERT} --header "Authorization: Bearer ${TOKEN}" -X GET https://kubernetes.default.svc/api/v1/namespaces/$NAMESPACE/pods/$PODNAME --silent
 ;
 run;
 
