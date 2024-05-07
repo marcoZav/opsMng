@@ -5,13 +5,13 @@ jnum
 sleepSeconds
 
 
-parms=jnum:01#sleepSeconds:5
+parms=jnum:01|sleepSeconds:5
 
 
 debug:
 %let jnum=01;
 %let sleepSeconds=2;
-%let parms=jnum:01#sleepSeconds:5;
+%let parms=jnum:01|sleepSeconds:5;
 
 */
 
@@ -25,8 +25,8 @@ parms=trim(left( symget('parms') ));
 put parms=;
 
 p=1;
-do while ( scan( parms,p,'#' ) ne '' );
-   parm=scan( parms,p,'#' );
+do while ( scan( parms,p,'|' ) ne '' );
+   parm=scan( parms,p,'|' );
    parmName = scan( parm,1,':' );
    parmValue = scan( parm,2,':' );
    call symputx (parmname, parmvalue);
