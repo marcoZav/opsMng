@@ -74,7 +74,9 @@ file _webout;
 set ff.ITEMS_METADATA;
 if index (name, 'compute-server');
 put name ' - created: ' creationTimestamp;
+call symput ('numPods', _n_);
 run;
+%put Numero pod attivi: &numPods;
 
 
 libname ff clear;
