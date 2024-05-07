@@ -76,7 +76,12 @@ if index (name, 'compute-server');
 put name ' - created: ' creationTimestamp;
 call symput ('numPods', _n_);
 run;
-%put Numero pod attivi: &numPods;
+
+data _null_;
+file _webout;
+put "Numero di pod attivi: &numPods";
+run;
+
 
 
 libname ff clear;
