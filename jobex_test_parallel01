@@ -58,7 +58,7 @@ run;
 data start;
 file _webout;
 put "job num=&jnum --- START --- &dtText. ";
-put "POD (SYSHOSTNAME==&SYSHOSTNAME";
+put "POD (SYSHOSTNAME)=&SYSHOSTNAME";
 /* put "SYSPROCESSID=&SYSPROCESSID"; */
 run;
 
