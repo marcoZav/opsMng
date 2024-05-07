@@ -4,12 +4,41 @@ parametri
 jnum
 sleepSeconds
 
+
+parms=jnum:01#sleepSeconds:5
+
+
 debug:
 %let jnum=01;
 %let sleepSeconds=2;
+%let parms=jnum:01#sleepSeconds:5;
 
 */
-%put ** job num=&jnum;
+
+
+data _null_;
+
+length parms parm parmValue $32000;
+length parmName $32 ;
+
+parms=trim(left( symget('parms') ));
+put parms=;
+
+p=1;
+do while ( scan( parms,p,'#' ) ne '' );
+   parm=scan( parms,p,'#' );
+   parmName = scan( parm,1,':' );
+   parmValue = scan( parm,2,':' );
+   call symputx (parmname, parmvalue);
+   put parmname= parmvalue=;
+   p=p+1;
+end;
+
+run;
+
+
+%put ** job num=&jnum.;
+%put ** sleepseconds=&sleepseconds.;
 
 proc format;
 picture dtpic
