@@ -72,9 +72,12 @@ libname ff json;
 data compute_servers;
 file _webout;
 set ff.ITEMS_METADATA;
-if index (name, 'compute-server');
-put name ' - created: ' creationTimestamp;
-call symput ('numPods', _n_);
+retain numPods 0;
+if index (name, 'compute-server') then do;
+   put name ' - created: ' creationTimestamp;
+   numPods=numPods+1;
+   call symput ('numPods',numPods);
+end;
 run;
 
 data _null_;
