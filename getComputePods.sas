@@ -69,23 +69,35 @@ filename ff "&workpath/result.txt";
 libname ff json;
 
 
+
+
+
 data compute_servers;
-file _webout;
 set ff.ITEMS_METADATA;
 retain numPods 0;
 if index (name, 'compute-server') then do;
-   put name ' - created: ' creationTimestamp;
    numPods=numPods+1;
    call symput ('numPods',numPods);
+   output;
 end;
 run;
+
+proc sort data=compute_servers;
+ by creationTimestamp;
+run;
+
+
+data _null_;
+file _webout;
+set compute_servers;
+put name ' - created: ' creationTimestamp;
+run;
+
 
 data _null_;
 file _webout;
 put "Numero di pod attivi: &numPods";
 run;
-
-
 
 libname ff clear;
 filename ff clear;
