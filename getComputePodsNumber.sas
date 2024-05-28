@@ -95,7 +95,8 @@ run;
 
 data _null_;
 file _webout;
-put "{ """NumPods""": &numPods }" ;
+num=compress(symget('numPods'));
+put '{ "NumPods":' num '}' ;
 run;
 
 libname ff clear;
