@@ -148,4 +148,7 @@ quit;
 %mend;
 %mng_webout;
 
-
+     data _null_;
+      file _webout;
+      put "esito=%sysfunc(fileref(_webout))";
+     run;
