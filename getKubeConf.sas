@@ -143,7 +143,7 @@ data _null_;
 run;
 
 %macro mng_webout;
- /* <0 significa che esiste */
+ /* <0 significa che esiste filename ma non file fisico. 0 esiste sia fileref sia file fisico. positivo non è assegnata la fileref */
  %if %sysfunc(fileref(_webout))<=0 %then %do;   
      data _null_;
       file _webout;
