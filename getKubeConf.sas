@@ -151,7 +151,7 @@ quit;
 
 data _null_;
      file _webout;
-     put "esito=%sysfunc(fileref(_webout))";
+     put "esito test fileref=%sysfunc(fileref(_webout))";
 run;
 data _null_;
 file _webout;
