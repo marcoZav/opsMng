@@ -157,5 +157,5 @@ quit;
 /*   */
 data _null_;
 file _webout;
-put '*** END ***';
+put '***-- END --***';
 run;
