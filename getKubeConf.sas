@@ -148,7 +148,11 @@ quit;
 %mng_webout;
 
 
-
+     data _null_;
+      file _webout;
+      set &outTable;
+      put respText;
+     run;
 
 /*   */
 data _null_;
