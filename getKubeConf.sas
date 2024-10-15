@@ -138,7 +138,7 @@ endsubmit;
 quit;
 
 
-
+/* solo se chiamata come job execution */
 %macro mng_webout;
  /* <0 significa che esiste filename ma non file fisico. 0 esiste sia fileref sia file fisico. positivo non è assegnata la fileref */
  %if %sysfunc(fileref(_webout))<=0 %then %do;   
