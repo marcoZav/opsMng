@@ -137,10 +137,7 @@ SAS.df2sd(df, outTable)
 endsubmit;
 quit;
 
-data _null_;
-     file _webout;
-     put "esito test fileref=%sysfunc(fileref(_webout))";
-run;
+
 
 %macro mng_webout;
  /* <0 significa che esiste filename ma non file fisico. 0 esiste sia fileref sia file fisico. positivo non è assegnata la fileref */
@@ -155,8 +152,5 @@ run;
 %mng_webout;
 
 
-data _null_;
-file _webout;
-put '-- END JOB EXECUTION (getKubeConf.sas) --';
-run;
+
 
