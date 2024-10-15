@@ -108,6 +108,7 @@ for item in items:
         name=container['name']
         if name in contList:
             print ('\n','>>> '+name)
+            fPrint ('-------------------------------------------------')
             fPrint ('>>> '+name)
             i=i+1
             if 'env' in container:
@@ -148,14 +149,3 @@ quit;
 %mng_webout;
 
 
-     data _null_;
-      file _webout;
-      set &outTable;
-      put respText;
-     run;
-
-/*   */
-data _null_;
-file _webout;
-put '***-- END --***';
-run;
