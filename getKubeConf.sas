@@ -138,7 +138,8 @@ endsubmit;
 quit;
 
 %macro mng_webout;
- %if %sysfunc(fileref(_webout))=0 %then %do;   
+ /* <0 significa che esiste */
+ %if %sysfunc(fileref(_webout))<0 %then %do;   
      data _null_;
       file _webout;
       set &outTable;
