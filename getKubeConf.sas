@@ -20,7 +20,7 @@ limiti di cpu ram, variabili di environment ecc.
 */
 %let containersList=[
 'sas-authorization','sas-files','sas-folders','sas-identities','sas-launcher','sas-rabbitmq','sas-search'
-,'sas-rabbitmq']
+,'sas-rabbitmq'];
 
 
 /* tabella di output con la response riga per riga */
