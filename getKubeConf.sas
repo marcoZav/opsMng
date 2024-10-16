@@ -17,6 +17,8 @@ limiti di cpu ram, variabili di environment ecc.
 
   qui prendo quelli che servono al back end
 
+  rabbit: la KB parla di sas-rabbitmq, jaroslaw di sas-rabbitmq-server
+
   tralasciati per ora sas studio e parte analitica
 
   postgres dovrebbe essere così la mappatura (fatta da jaroslaw)
