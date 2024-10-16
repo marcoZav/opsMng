@@ -5,14 +5,25 @@ estrazione dei parametri di configurazione dei pods nel sistema.
 es. 
 limiti di cpu ram, variabili di environment ecc.
 
+** lanciabile sia da sas studio sia come job execution, si adatta automaticamente:                         **
 ** se eseguita da job execution web application, scrive anche in webout il contenuto del dataset di output **
 
 */
 
-/* lista containers su cui limitare estrazione */
-%let containersList=['sas-launcher','sas-compute'];
+/* 
+  lista containers su cui limitare estrazione 
 
-/* per response */
+  elenco completo in https://sas.service-now.com/now/nav/ui/classic/params/target/kb_view.do%3Fsysparm_article%3DKB0039499
+
+  qui prendo quelli che servono al back end
+
+*/
+%let containersList=[
+'sas-authorization','sas-files','sas-folders','sas-identities','sas-launcher','sas-rabbitmq','sas-search'
+,'sas-rabbitmq']
+
+
+/* tabella di output con la response riga per riga */
 %let outTable=work.response;
 
 /* --------------------------------------------------------------------------- */
@@ -150,7 +161,4 @@ quit;
  %end;
 %mend;
 %mng_webout;
-
-
-
 
