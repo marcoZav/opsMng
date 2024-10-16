@@ -17,10 +17,19 @@ limiti di cpu ram, variabili di environment ecc.
 
   qui prendo quelli che servono al back end
 
+  tralasciati per ora sas studio e parte analitica
+
+  postgres dovrebbe essere così la mappatura (fatta da jaroslaw)
+  pgbackrest = sas-crunchy-platform-postgres-repo-host
+  opendistro = sas-opendistro-operator
+  
+
 */
 %let containersList=[
 'sas-authorization','sas-files','sas-folders','sas-identities','sas-launcher','sas-compute','sas-search'
-,'sas-rabbitmq'];
+,'sas-rabbitmq','sas-rabbitmq-server',
+'sas-crunchy-platform-postgres-repo-host', 
+,''];
 
 
 /* tabella di output con la response riga per riga */
