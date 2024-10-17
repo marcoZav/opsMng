@@ -28,10 +28,10 @@ limiti di cpu ram, variabili di environment ecc.
 
 */
 %let containersList=[
-'sas-authorization','sas-files','sas-folders','sas-identities','sas-launcher','sas-compute','sas-search','sas-logon'
+'sas-authorization','sas-files','sas-folders','sas-identities','sas-launcher','sas-compute','sas-search','sas-logon-app'
 ,'sas-rabbitmq','sas-rabbitmq-server',
-'sas-crunchy-platform-postgres-repo-host', 
-,''];
+,'sas-crunchy-platform-postgres-repo-host'
+];
 
 
 /* tabella di output con la response riga per riga */
