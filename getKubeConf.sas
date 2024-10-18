@@ -71,24 +71,10 @@ x "chmod ugo+x &shellFile";
 
 data _null_;
   call system("&shellFile > &commandOutfile");
-  run;
-
-/*
-x "&shellFile > &commandOutfile";
-*/
+run;
 
 %put "&sysrc" "&sysmsg"; 
 
-/*
-data _null_;
-call sleep(6,1);
-run;
-*/
-
-/*
-filename kube "&commandOutfile";
-libname kube json;
-*/
 
 proc python restart;
 submit;
